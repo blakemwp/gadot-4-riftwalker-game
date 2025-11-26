@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2ngfhcbl1vaa"]
+[gd_scene load_steps=10 format=3 uid="uid://b2ngfhcbl1vaa"]
 
 [ext_resource type="Theme" uid="uid://dttsyqrquu8ar" path="res://Assets/default_theme.tres" id="1_wc8vl"]
 [ext_resource type="PackedScene" uid="uid://bg10iuogr8lk4" path="res://Scenes/window_default.tscn" id="2_38p5k"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://opd7oqwvou8b" path="res://Scenes/cyborg.tscn" id="4_y6era"]
 [ext_resource type="Script" uid="uid://c67plyb4eh47c" path="res://Scenes/menu.gd" id="5_8omfk"]
 [ext_resource type="Texture2D" uid="uid://tliku2ymxlfw" path="res://Assets/Characters/3 Hands/1 Biker/1.png" id="5_48ya4"]
+[ext_resource type="Script" uid="uid://d3h145q67wyqh" path="res://Scenes/window_default.gd" id="5_xjn7l"]
 [ext_resource type="Texture2D" uid="uid://cxksidhdrlnwd" path="res://Assets/Characters/3 Hands/1 Biker/6.png" id="6_8omfk"]
 
 [node name="Battle" type="Control"]
@@ -60,6 +61,7 @@ offset_top = 115.0
 offset_right = 114.0
 offset_bottom = 179.0
 size_flags_stretch_ratio = 2.0
+script = ExtResource("5_xjn7l")
 
 [node name="Menu" type="VBoxContainer" parent="Options"]
 custom_minimum_size = Vector2(46, 46)
@@ -165,3 +167,6 @@ offset_right = 74.0
 offset_bottom = 92.0
 texture_normal = ExtResource("6_8omfk")
 flip_h = true
+
+[connection signal="button_focused" from="Options/Menu" to="." method="_on_menu_button_focused"]
+[connection signal="button_pressed" from="Options/Menu" to="." method="_on_menu_button_pressed"]
